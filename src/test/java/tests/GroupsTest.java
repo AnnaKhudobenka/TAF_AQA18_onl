@@ -3,7 +3,7 @@ package tests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class GrupsTest {
+public class GroupsTest {
     Calculator calculator = new Calculator();
 
     @Test(groups = "smoke")
@@ -11,9 +11,9 @@ public class GrupsTest {
         Assert.assertEquals(calculator.sum(2, 3), 5,
                 "Неверная сумма");
     }
-    @Test(groups = "ragression")
+    @Test(groups = "regression")
     public void stepa() {
-        Assert.assertEquals(calculator.sum(2, 3), 6,
+        Assert.assertEquals(calculator.sum(2, 3), 5,
                 "Неверная сумма");
     }
     @Test(groups = "regression")

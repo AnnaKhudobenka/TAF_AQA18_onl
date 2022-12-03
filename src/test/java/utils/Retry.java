@@ -1,10 +1,10 @@
-package unils;
+package utils;
 
 import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;
 import org.testng.internal.TestResult;
 
-public class Retry1 implements IRetryAnalyzer {
+public class Retry implements IRetryAnalyzer {
     private int attempt = 1;
     private static final int MAX_RETRY = 5;
 

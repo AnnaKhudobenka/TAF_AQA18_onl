@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="620bfbb6-5642-47c4-a1fb-0c58a325e3bd" name="Changes" comment="Commit">
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Calculator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/CalTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/Calculator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/DataProviderTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/DependencyTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/GrupsTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/PriorityTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/RetryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/SimpleTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/SimpleTest1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/data/StaticProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/paramTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/unils/Listener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/unils/Retry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/unils/Retry1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/group.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/parallel.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/param.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/testng.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2IEHKbu5SZ6Ui9GZ0ONWl7Z8JBC" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/HP/IdeaProjects/TestAuto/src/test/java/tests"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\HP\IdeaProjects\TestAuto\src\test\java\tests" />
+      <recent name="C:\Users\HP\IdeaProjects\TestAuto\src\test\java\unils" />
+      <recent name="C:\Users\HP\IdeaProjects\TestAuto\src\test\resources" />
+      <recent name="C:\Users\HP\IdeaProjects\TestAuto\src\main\java" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="tests" />
+    </key>
+  </component>
+  <component name="RunManager" selected="TestNG.CalTest.testSum10">
+    <configuration name="C:/Users/HP/IdeaProjects/TestAuto/src/test/resources/parallel.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="TestAuto" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/resources/parallel.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="C:/Users/HP/IdeaProjects/TestAuto/src/test/resources/param.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="TestAuto" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/resources/param.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CalTest.testSum10" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="TestAuto" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.CalTest" />
+      <option name="METHOD_NAME" value="testSum10" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RetryTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="TestAuto" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.RetryTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="paramTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="TestAuto" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.paramTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="TestNG.RetryTest" />
+        <item itemvalue="TestNG.paramTest" />
+        <item itemvalue="TestNG.CalTest.testSum10" />
+        <item itemvalue="TestNG.C:/Users/HP/IdeaProjects/TestAuto/src/test/resources/param.xml" />
+        <item itemvalue="TestNG.C:/Users/HP/IdeaProjects/TestAuto/src/test/resources/parallel.xml" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="620bfbb6-5642-47c4-a1fb-0c58a325e3bd" name="Changes" comment="" />
+      <created>1669739764119</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1669739764119</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Commit">
+      <created>1669744611838</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1669744611838</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/TestAuto$_default_.ic" NAME="&lt;default&gt; Coverage Results" MODIFIED="1669913798103" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+</project>
