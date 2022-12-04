@@ -11,4 +11,21 @@ public class StaticProvider {
                 {0, 0, 0}
         };
     }
+    @DataProvider (name = "dataForDiv")
+    public static Object[][] dataForDivTest() {
+        return new Object[][] {
+                {-8, 2},
+                {-8, -2},
+                {8, 2}
+        };
+    }
+    @DataProvider (name = "dataForDoubleDiv")
+    public static Object[][] dataForDoubleDivTest() {
+        return new Object[][] {
+                {-8, 3.0},
+                {-8, -3.0},
+                {8, 3.0}
+        };
+    }
+
 }

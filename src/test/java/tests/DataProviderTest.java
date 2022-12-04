@@ -13,4 +13,17 @@ public class DataProviderTest {
         Assert.assertEquals(calculator.sum(a, b), expected,
                 "Неверная сумма");
     }
+    @Test(dataProvider = "dataForDiv", dataProviderClass = StaticProvider.class)
+    public void testDiv(int a, int b) {
+        int expected = calculator.div(a, b);
+        Assert.assertEquals(calculator.div(a, b), expected,
+                "Ошибка при делении");
+    }
+    @Test(dataProvider = "dataForDoubleDiv", dataProviderClass = StaticProvider.class)
+    public void testDoubleDiv(double a, double b) {
+        double expected = calculator.div(a, b);
+        Assert.assertEquals(calculator.div(a, b), expected,
+                "Ошибка при делении");
+    }
+
 }

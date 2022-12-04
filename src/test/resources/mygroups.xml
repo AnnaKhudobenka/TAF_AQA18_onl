@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Main Suite">
+    <test name="Groups Tests">
+        <groups>
+            <define name="Group 1">
+                <include name="simpleAction"/>
+            </define>
+            <define name="Group 2">
+                <include name="nullAction"/>
+            </define>
+            <run>
+                <include name="Group 2"></include>
+            </run>
+        </groups>
+        <classes>
+            <class name="tests.DivTest"></class>
+        </classes>
+    </test>
+</suite>
