@@ -2,6 +2,7 @@ package tests;
 
 import factory.BrowserFactory;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -9,6 +10,8 @@ import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
+import java.security.Key;
 
 public class SmokeTest {
     private WebDriver driver;
@@ -62,6 +65,54 @@ public class SmokeTest {
         Assert.assertEquals(driver.findElement(By.id("txtCG")).getText(), "Cockroft-Gault: 70 (мл/мин)");
         Assert.assertEquals(driver.findElement(By.id("txtBSA")).getText(), "Поверхность тела:1.58 (кв.м)");
 
+    }
+
+    @Test
+    public void validateElectricCalTest() throws InterruptedException {
+        driver.get("https://kermi-fko.ru/raschety/Calc-Rehau-Solelec.aspx");
+
+        WebElement selectWebElement = driver.findElement(By.id("room_type"));
+        Select select = new Select(selectWebElement);
+        select.selectByValue("3");
+        Thread.sleep(1000);
+
+        WebElement selectWebElement2 = driver.findElement(By.id("heating_type"));
+        Select select2 = new Select(selectWebElement2);
+        select2.selectByValue("3");
+        Thread.sleep(1000);
+
+        driver.findElement(By.id("el_f_width")).sendKeys("3");
+        driver.findElement(By.id("el_f_lenght")).sendKeys("5");
+        driver.findElement(By.id("el_f_losses")).sendKeys("1000");
+        driver.findElement(By.xpath("/html/body/form/div[3]/div[2]/table/tbody/tr[2]/td[2]/div[3]/div/input")).click();
+        Thread.sleep(3000);
+
+        Assert.assertEquals(driver.findElement(By.id("floor_cable_power")).getText(), "557");
+        Assert.assertEquals(driver.findElement(By.id("spec_floor_cable_power")).getText(), "37");
+    }
+
+    @Test
+    public void validateLaminateCalTest() throws InterruptedException {
+        driver.get("https://calc.by/building-calculators/laminate.html");
+        WebElement webElement = driver.findElement(By.id("laying_method_laminate"));
+        Select select = new Select(webElement);
+        select.selectByValue("2");
+
+        driver.findElement(By.id("ln_room_id")).clear();
+        driver.findElement(By.id("ln_room_id")).sendKeys("500");
+        driver.findElement(By.id("wd_room_id")).clear();
+        driver.findElement(By.id("wd_room_id")).sendKeys("400");
+        driver.findElement(By.id("ln_lam_id")).clear();
+        driver.findElement(By.id("ln_lam_id")).sendKeys("2000");
+        driver.findElement(By.id("wd_lam_id")).clear();
+        driver.findElement(By.id("wd_lam_id")).sendKeys("200");
+        driver.findElement(By.id("direction-laminate-id1")).click();
+        driver.findElement(By.className("calc-btn")).click();
+
+        Thread.sleep(5000);
+
+        Assert.assertEquals(driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div[1]/div[3]/article/section/div[2]/div[3]/div[2]/div[1]/span")).getText(), "53");
+        Assert.assertEquals(driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div[1]/div[3]/article/section/div[2]/div[3]/div[2]/div[2]/span")).getText(), "7");
     }
 
     @AfterMethod
