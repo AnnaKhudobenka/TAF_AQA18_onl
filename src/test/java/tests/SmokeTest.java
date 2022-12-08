@@ -84,7 +84,7 @@ public class SmokeTest {
         driver.findElement(By.id("el_f_width")).sendKeys("3");
         driver.findElement(By.id("el_f_lenght")).sendKeys("5");
         driver.findElement(By.id("el_f_losses")).sendKeys("1000");
-        driver.findElement(By.xpath("/html/body/form/div[3]/div[2]/table/tbody/tr[2]/td[2]/div[3]/div/input")).click();
+        driver.findElement(By.xpath("[type='button']")).click();
         Thread.sleep(3000);
 
         Assert.assertEquals(driver.findElement(By.id("floor_cable_power")).getText(), "557");
@@ -111,8 +111,8 @@ public class SmokeTest {
 
         Thread.sleep(5000);
 
-        Assert.assertEquals(driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div[1]/div[3]/article/section/div[2]/div[3]/div[2]/div[1]/span")).getText(), "53");
-        Assert.assertEquals(driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div[1]/div[3]/article/section/div[2]/div[3]/div[2]/div[2]/span")).getText(), "7");
+        Assert.assertEquals(driver.findElement(By.cssSelector("[style='padding:5px 0;font-size:22px; color:#C80303; font-weight:bold;']")).getText(), "53");
+        Assert.assertEquals(driver.findElement(By.cssSelector("[style='padding:5px 0;font-size:18px; color:#0E8C19; font-weight:bold;']")).getText(), "7");
     }
 
     @AfterMethod
