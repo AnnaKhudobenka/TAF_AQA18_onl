@@ -84,7 +84,7 @@ public class SmokeTest {
         driver.findElement(By.id("el_f_width")).sendKeys("3");
         driver.findElement(By.id("el_f_lenght")).sendKeys("5");
         driver.findElement(By.id("el_f_losses")).sendKeys("1000");
-        driver.findElement(By.xpath("[type='button']")).click();
+        driver.findElement(By.cssSelector("[type='button']")).click();
         Thread.sleep(3000);
 
         Assert.assertEquals(driver.findElement(By.id("floor_cable_power")).getText(), "557");
