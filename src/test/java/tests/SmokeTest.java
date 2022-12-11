@@ -87,8 +87,8 @@ public class SmokeTest {
         driver.findElement(By.cssSelector("[type='button']")).click();
         Thread.sleep(3000);
 
-        Assert.assertEquals(driver.findElement(By.id("floor_cable_power")).getText(), "557");
-        Assert.assertEquals(driver.findElement(By.id("spec_floor_cable_power")).getText(), "37");
+        Assert.assertEquals(driver.findElement(By.id("floor_cable_power")).getAttribute("value"), "557");
+        Assert.assertEquals(driver.findElement(By.id("spec_floor_cable_power")).getAttribute("value"), "37");
     }
 
     @Test
