@@ -37,4 +37,22 @@ public class TaskHW_8 {
         Assert.assertEquals(driver.findElement(By.xpath("//div/a/div")).getText(), "Sauce Labs Bolt T-Shirt");
         Assert.assertEquals(driver.findElement(By.xpath("//div[contains(@class, '_item_price')]")).getText(), "$15.99");
     }
+
+    @Test
+    public void taskTest2() throws InterruptedException {
+        driver.get("https://www.saucedemo.com/");
+
+        driver.findElement(By.xpath("//*[contains(@id, 'ame')]")).sendKeys("standard_user");
+        driver.findElement(By.cssSelector("input[type$='rd']")).sendKeys("secret_sauce");
+        driver.findElement(By.cssSelector(".submit-button")).click();
+        // or driver.findElement(By.cssSelector("div + input")).click();
+        Thread.sleep(3000);
+
+        driver.findElement(By.xpath("//div[text()='49.99']/following-sibling::button")).click();
+        driver.findElement(By.xpath("//div/a/span")).click();
+        Thread.sleep(3000);
+
+        Assert.assertEquals(driver.findElement(By.xpath("//*[text()='Sauce Labs Fleece Jacket']")).getText(), "Sauce Labs Fleece Jacket");
+        Assert.assertEquals(driver.findElement(By.xpath("//div/a/following-sibling::div/div")).getText(), "$49.99");
+    }
 }
