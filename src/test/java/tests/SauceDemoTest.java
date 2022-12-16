@@ -13,7 +13,7 @@ public class SauceDemoTest extends BaseTestHW {
         Assert.assertTrue(userStepsHW.addProductAndGoToCart().isPageOpened());
         userStepsHW.putCheckoutButton();
         Assert.assertTrue(userStepsHW.putYourPayInfo("Ivan", "Ivanov", "11111").isPageOpened());
-        userStepsHW.finishPayment();
+        Assert.assertTrue(userStepsHW.finishPayment().isPageOpened());
         Thread.sleep(3000);
     }
 }

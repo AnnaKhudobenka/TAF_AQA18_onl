@@ -48,9 +48,10 @@ public class UserStepsHW extends BaseStepHW {
         Thread.sleep(2000);
         return new CheckoutPage(driver);
     }
-    public void finishPayment() {
+    public ProductsPage finishPayment() {
         checkoutPage.getFinishButton().click();
         checkoutPage.getBackToProducts().click();
+        return new ProductsPage(driver);
     }
 
 }
