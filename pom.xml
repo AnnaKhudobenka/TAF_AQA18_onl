@@ -44,7 +44,7 @@
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>
                     <!--suiteXmlFiles>
-                        <suiteXmlFile>target/test-classes/group.xml</suiteXmlFile>
+                        <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
                     </suiteXmlFiles-->
                 </configuration>
                 <dependencies>

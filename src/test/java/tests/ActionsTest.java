@@ -12,7 +12,7 @@ import java.util.List;
 
 public class ActionsTest extends BaseTest {
 
-    @Test
+   // @Test
     public void hoverTest() {
         driver.get("http://the-internet.herokuapp.com/hovers");
 
@@ -28,7 +28,7 @@ public class ActionsTest extends BaseTest {
         Assert.assertTrue(waitsService.waitForInvisible(targetElements.get(0)));
     }
 
-    @Test
+   // @Test
     public void fileUploadTest() throws InterruptedException {
         driver.get("http://the-internet.herokuapp.com/upload");
 
@@ -43,7 +43,7 @@ public class ActionsTest extends BaseTest {
         Assert.assertEquals(waitsService.waitForVisibilityBy(By.id("uploaded-files")).getText().trim(), "download.jpeg");
     }
 
-    @Test
+    //@Test
     public void fileUploadTest2() {
         driver.get("http://the-internet.herokuapp.com/upload");
 
