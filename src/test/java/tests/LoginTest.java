@@ -2,10 +2,13 @@ package tests;
 
 import baseEntities.BaseTest;
 import configuration.ReadProperties;
+import io.qameta.allure.Issue;
+import io.qameta.allure.TmsLink;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.DashboardPage;
 import pages.LoginPage;
+import steps.UserSteps;
 
 public class LoginTest extends BaseTest {
 
@@ -21,7 +24,9 @@ public class LoginTest extends BaseTest {
         Assert.assertTrue(new DashboardPage(driver).isPageOpened());
     }
 
-    //@Test
+    @Test(description = "Description")
+    @Issue("AQA18-1")
+    @TmsLink("TC-001")
     public void loginSuccessfulTest() {
         Assert.assertTrue(userStep.loginSuccessful(ReadProperties.username(),
                 ReadProperties.password()).isPageOpened());
