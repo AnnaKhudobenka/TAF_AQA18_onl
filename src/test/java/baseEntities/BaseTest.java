@@ -18,7 +18,7 @@ public class BaseTest {
     public void setUp() {
         driver = new BrowserFactory().getDriver();
         waitsService = new WaitsService(driver);
-//        driver.get(ReadProperties.getUrl());
+        driver.get(ReadProperties.getUrl());
 
         userStep = new UserSteps(driver);
     }
