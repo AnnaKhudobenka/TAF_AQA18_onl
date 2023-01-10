@@ -2,14 +2,21 @@ package baseEntities;
 
 import configuration.ReadProperties;
 import factory.BrowserFactory;
+import io.qameta.allure.Attachment;
+import org.openqa.selenium.NoSuchSessionException;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import services.WaitsService;
 import steps.UserSteps;
+import utils.InvokedListener;
 
+@Listeners(InvokedListener.class)
 public class BaseTest {
     protected WebDriver driver;
     protected UserSteps userStep;
@@ -22,11 +29,31 @@ public class BaseTest {
         waitsService = new WaitsService(driver);
         driver.get(ReadProperties.getUrl());
 
+        iTestContext.setAttribute("driver", driver);
+
         userStep = new UserSteps(driver);
     }
 
     @AfterMethod
-    public void tearDown() {
+    public void tearDown(ITestResult testResult) {
+        // Solution - 2: Плохое решение - потому, что Screenshot добавляется в шаг TearDown
+
+//        if (testResult.getStatus() == ITestResult.FAILURE) {
+//            try {
+//                byte[] srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+//                saveScreenshot(srcFile);
+//            } catch (NoSuchSessionException ex) {
+//
+//            }
+//        }
+
         driver.quit();
     }
+
+//     Solution - 2:
+    @Attachment(value = "Page screenshot", type = "image/png")
+    private byte[] saveScreenshot(byte[] screenshot) {
+        return screenshot;
+    }
+//     Solution - 2: Finish
 }
