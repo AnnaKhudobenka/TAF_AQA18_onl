@@ -1,20 +1,20 @@
 package pages;
 
 import baseEntities.BasePage;
+import elements.Button;
+import elements.UIElement;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class LoginPage extends BasePage {
-//    private WebDriver driver;
-    // 1. блок описания локатора для элемента
+    // Блок описания локаторов для эментов
     private final By emailInputLocator = By.id("name");
     private final By passwordInputLocator = By.id("password");
     private final By logInButtonLocator = By.id("button_primary");
     private final By errorTextLocator = By.className("error-text");
 
-    // 2. блок инициализации стр
-
+    // Блок иницализации страницы
     public LoginPage(WebDriver driver) {
         super(driver);
     }
@@ -24,17 +24,9 @@ public class LoginPage extends BasePage {
         return logInButtonLocator;
     }
 
-    // 3. блок атомарных методов
-    public WebElement getEmailInput() {
-       return waitsService.waitForVisibilityBy(emailInputLocator);
-    }
-    public WebElement getPasswordInput() {
-        return waitsService.waitForVisibilityBy(passwordInputLocator);
-    }
-    public WebElement getLogInButton() {
-        return waitsService.waitForVisibilityBy(logInButtonLocator);
-    }
-
-    public WebElement getErrorTextElement() {
-        return waitsService.waitForVisibilityBy(errorTextLocator); }
+    // Блок атомарных методов
+    public UIElement getEmailInput() { return new UIElement(driver, emailInputLocator);}
+    public UIElement getPassword() { return new UIElement(driver, passwordInputLocator);}
+    public Button getLogInButton() { return new Button(driver, logInButtonLocator);}
+    public UIElement getErrorTextElement() { return new UIElement(driver, errorTextLocator); }
 }

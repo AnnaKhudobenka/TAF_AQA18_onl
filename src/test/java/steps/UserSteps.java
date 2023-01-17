@@ -15,23 +15,22 @@ public class UserSteps extends BaseStep {
         loginPage = new LoginPage(driver);
     }
 
-    public void login(String email, String password) {
+    public void login(String email, String psw) {
         loginPage.getEmailInput().sendKeys(email);
-        loginPage.getPasswordInput().sendKeys(password);
-        loginPage. getLogInButton().click();
+        loginPage.getPassword().sendKeys(psw);
+        loginPage.getLogInButton().click();
     }
 
-//    @Step
-    public DashboardPage loginSuccessful(String email, String password) {
-        login(email, password);
+    @Step
+    public DashboardPage loginSuccessful(String email, String psw) {
+        login(email, psw);
 
         return new DashboardPage(driver);
     }
 
-     public LoginPage loginInCorrect(String email, String password) {
-         login(email, password);
+    public LoginPage loginIncorrect(String email, String psw) {
+        login(email, psw);
 
-         return loginPage;
-     }
-
+        return loginPage;
+    }
 }

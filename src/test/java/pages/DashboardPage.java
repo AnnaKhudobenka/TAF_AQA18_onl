@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 
 public class DashboardPage extends BasePage {
     private final static String pagePath = "index.php?/dashboard";
-    private final By headerTitleLabelLocator = By.id("ui-dialog-title-messageDialog");
+    private final By headerTitleLabelLocator = By.id("navigation-dashboard");
 
     public DashboardPage(WebDriver driver) {
         super(driver);
