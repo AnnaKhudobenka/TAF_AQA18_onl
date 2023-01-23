@@ -1,11 +1,11 @@
 package pages;
 
-import baseEntities.BasePageHW;
+import baseEntities.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class CheckoutPage extends BasePageHW {
+public class CheckoutPage extends BasePage {
     private final By firstName = By.id("first-name");
     private final By lastName = By.id("last-name");
     private final By zipCode = By.id("postal-code");

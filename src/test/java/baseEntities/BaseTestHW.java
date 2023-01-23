@@ -7,12 +7,12 @@ import org.testng.annotations.BeforeMethod;
 import pages.CartPage;
 import pages.CheckoutPage;
 import pages.ProductsPage;
-import steps.UserStepsHW;
+import steps.UserSteps;
 import java.time.Duration;
 
 public class BaseTestHW {
     protected WebDriver driver;
-    protected UserStepsHW userStepsHW;
+    protected UserSteps userStepsHW;
     protected ProductsPage productsPage;
     protected CartPage cartPage;
     protected CheckoutPage checkoutPage;
@@ -24,7 +24,7 @@ public class BaseTestHW {
         driver.get(pageLoginPath);
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-        userStepsHW = new UserStepsHW(driver);
+        userStepsHW = new UserSteps(driver);
         productsPage = new ProductsPage(driver);
         cartPage = new CartPage(driver);
         checkoutPage = new CheckoutPage(driver);

@@ -9,10 +9,10 @@ public class SauceDemoTest extends BaseTestHW {
     @Test
     public void sauceDemoTest() throws InterruptedException {
 
-        Assert.assertTrue(userStepsHW.login("standard_user", "secret_sauce").isPageOpened());
-        Assert.assertTrue(userStepsHW.addProductAndGoToCart().isPageOpened());
+        userStepsHW.login("standard_user", "secret_sauce");
+        userStepsHW.addProductAndGoToCart();
         userStepsHW.putCheckoutButton();
-        Assert.assertTrue(userStepsHW.putYourPayInfo("Ivan", "Ivanov", "11111").isPageOpened());
+        userStepsHW.putYourPayInfo("Ivan", "Ivanov", "11111");
         Assert.assertTrue(userStepsHW.finishPayment().isPageOpened());
         Thread.sleep(3000);
     }

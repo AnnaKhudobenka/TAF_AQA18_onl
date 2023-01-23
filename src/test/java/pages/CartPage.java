@@ -1,11 +1,11 @@
 package pages;
 
-import baseEntities.BasePageHW;
+import baseEntities.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class CartPage extends BasePageHW {
+public class CartPage extends BasePage {
 
     private final By nameProducts = By.xpath("//*[text()='Sauce Labs Fleece Jacket']");
 
