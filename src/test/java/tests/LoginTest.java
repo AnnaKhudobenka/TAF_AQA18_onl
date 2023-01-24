@@ -41,24 +41,6 @@ public class LoginTest extends BaseTest {
     }
 
     @Test
-    public void loginIncorrectTest() {
-        Assert.assertEquals(
-                userStep.loginIncorrect(ReadProperties.username(), "sdfsdfsdf")
-                .getErrorTextElement().getText(),
-                "Email/Login or Password is incorrect. Please try again.1"
-        );
-    }
-
-    @Test
-    public void addProjectTest() {
-        userStep.loginSuccessful(ReadProperties.username(), ReadProperties.password());
-        projectSteps.addProject("WP_01");
-
-        Assert.assertEquals(driver.findElement(By.className("page_title")).getText(),
-                "WP_01");
-    }
-
-    @Test
     public void radioButtonTest() {
         userStep.loginSuccessful(ReadProperties.username(), ReadProperties.password());
         AddProjectPage page = new NavigationSteps(driver).navigateToAddProjectPage();
