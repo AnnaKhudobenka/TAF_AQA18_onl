@@ -2,9 +2,10 @@ package models;
 
 import lombok.*;
 
-@Data
-@NoArgsConstructor
-public class Milestone {
+@Builder
+@ToString
+@EqualsAndHashCode
+public class MilestoneBuilder {
     @EqualsAndHashCode.Exclude
     private int id;
 
