@@ -1,6 +1,8 @@
 package steps;
 
 import baseEntities.BaseStep;
+import models.ProjectForLogin;
+import models.User;
 import org.openqa.selenium.WebDriver;
 import pages.CartPage;
 import pages.CheckoutPage;
@@ -8,7 +10,7 @@ import pages.LoginPage;
 import pages.ProductsPage;
 
 public class UserSteps extends BaseStep {
-    private LoginPage loginPageHW;
+    private LoginPage loginPage;
     private ProductsPage productsPage;
     private CartPage cartPage;
     private CheckoutPage checkoutPage;
@@ -16,41 +18,36 @@ public class UserSteps extends BaseStep {
     public UserSteps(WebDriver driver) {
         super(driver);
 
-        loginPageHW = new LoginPage(driver);
+        loginPage = new LoginPage(driver);
         productsPage = new ProductsPage(driver);
         cartPage = new CartPage(driver);
         checkoutPage = new CheckoutPage(driver);
     }
 
-    public ProductsPage login(String username, String password) {
-        loginPageHW.getUsernameInput().sendKeys(username);
-        loginPageHW.getPasswordInput().sendKeys(password);
-        loginPageHW.getLogInButton().click();
-        return new ProductsPage(driver);
+    public void login(ProjectForLogin project) {
+        loginPage.usernameInput.sendKeys(project.getUsername());
+        loginPage.passwordInput.sendKeys(project.getPassword());
+        loginPage.logInButton.click();
     }
 
-    public CartPage addProductAndGoToCart() throws InterruptedException {
-        productsPage.getAddToCartTShirt().click();
-        productsPage.getGoToCart().click();
-        Thread.sleep(2000);
-        return new CartPage(driver);
+    public void addProductAndGoToCart() {
+        productsPage.addToCartTShirt.click();
+        productsPage.goToCart.click();
     }
 
     public void putCheckoutButton() {
-        cartPage.getCheckoutButton().click();
+        cartPage.checkoutButton.click();
     }
 
-    public CheckoutPage putYourPayInfo(String firstname, String lastname, String zipcode) throws InterruptedException {
-        checkoutPage.getFirstName().sendKeys(firstname);
-        checkoutPage.getLastName().sendKeys(lastname);
-        checkoutPage.getZipCode().sendKeys(zipcode);
-        checkoutPage.getContinueButton().click();
-        Thread.sleep(2000);
-        return new CheckoutPage(driver);
+    public void putYourPayInfo(User user) {
+        checkoutPage.firstName.sendKeys(user.getFirstname());
+        checkoutPage.lastName.sendKeys(user.getLastname());
+        checkoutPage.zipCode.sendKeys(user.getZipcode());
+        checkoutPage.continueButton.click();
     }
     public ProductsPage finishPayment() {
-        checkoutPage.getFinishButton().click();
-        checkoutPage.getBackToProducts().click();
+        checkoutPage.finishButton.click();
+        checkoutPage.backToProducts.click();
         return new ProductsPage(driver);
     }
 

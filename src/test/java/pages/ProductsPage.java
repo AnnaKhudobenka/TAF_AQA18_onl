@@ -4,25 +4,25 @@ import baseEntities.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 public class ProductsPage extends BasePage {
-    private final By headerTitleLabelLocator = By.xpath("//span[contains(text(), 'Products')]");
-    private final By addToCartTShirt = By.xpath("//div[text()='49.99']/following-sibling::button");
-    private final By goToCart = By.className("shopping_cart_link");
+
+    private static By headerTitleLabel = By.xpath("//span[contains(text(), 'Products')]");
+    @FindBy (xpath = "//div[text()='49.99']/following-sibling::button")
+    public WebElement addToCartTShirt;
+    @FindBy (className = "shopping_cart_link")
+    public WebElement goToCart;
     public ProductsPage(WebDriver driver) {
         super(driver);
     }
 
-    @Override
+
     protected By getPageIdentifier() {
-        return headerTitleLabelLocator;
+        return headerTitleLabel;
+    }
+    public boolean isPageOpened() {
+        return driver.findElement(getPageIdentifier()).isDisplayed();
     }
 
-    public WebElement getAddToCartTShirt() {
-        return driver.findElement(addToCartTShirt);
-    }
-
-    public WebElement getGoToCart() {
-        return driver.findElement(goToCart);
-    }
 }

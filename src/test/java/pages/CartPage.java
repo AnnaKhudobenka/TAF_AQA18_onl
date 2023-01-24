@@ -4,23 +4,21 @@ import baseEntities.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 public class CartPage extends BasePage {
-
-    private final By nameProducts = By.xpath("//*[text()='Sauce Labs Fleece Jacket']");
-
-    private final By checkoutButton = By.id("checkout");
+    @FindBy (xpath = "//*[text()='Sauce Labs Fleece Jacket']")
+    public WebElement nameProducts;
+    @FindBy (id = "checkout")
+    public WebElement checkoutButton;
 
     public CartPage(WebDriver driver) {
         super(driver);
     }
 
-    @Override
-    protected By getPageIdentifier() {
-        return nameProducts;
-    }
+//    @Override
+//    protected By getPageIdentifier() {
+//        return nameProducts;
+//    }
 
-    public WebElement getCheckoutButton () {
-        return driver.findElement(checkoutButton);
-    }
 }
