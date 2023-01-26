@@ -39,7 +39,7 @@ public class LoginTest extends BaseTest {
         Assert.assertTrue(
                 userStep.loginSuccessful(user).isPageOpened());
     }
-// комментарий для jenkins
+//  комментарий для jenkins
     @Test
     public void radioButtonTest() {
         userStep.loginSuccessful(ReadProperties.username(), ReadProperties.password());
