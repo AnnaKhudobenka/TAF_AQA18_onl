@@ -26,6 +26,10 @@ public class CheckoutPage extends BasePage {
         super(driver);
     }
 
+    public String showCheckoutMessage() {
+        return "Massage about checkout";
+    }
+
 //    @Override
 //    protected By getPageIdentifier() {
 //        return costWithTax;

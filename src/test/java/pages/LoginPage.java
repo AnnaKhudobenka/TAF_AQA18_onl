@@ -18,6 +18,10 @@ public class LoginPage extends BasePage {
         super(driver);
     }
 
+    public String showLoginMessage() {
+        return "Massage about authorization";
+    }
+
 //    @Override
 //    protected By getPageIdentifier() {
 //        return logInButton;

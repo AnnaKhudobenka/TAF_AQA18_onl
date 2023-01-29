@@ -33,10 +33,10 @@ public class BaseTest {
         cartPage = new CartPage(driver);
         checkoutPage = new CheckoutPage(driver);
 
-        user = new User.Builder()
-                .withFirstname("Ivan")
-                .withLastname("Ivanov")
-                .withZipcode("11111")
+        user = User.builder()
+                .zipcode("11111")
+                .lastname("Ivanov")
+                .firstname("Ivan")
                 .build();
 
         project = new ProjectForLogin();

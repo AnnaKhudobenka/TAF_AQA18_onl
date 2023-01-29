@@ -4,8 +4,6 @@ import baseEntities.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.time.Duration;
-
 public class SauceDemoTest extends BaseTest {
 
     @Test

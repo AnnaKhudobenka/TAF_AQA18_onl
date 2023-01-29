@@ -25,30 +25,61 @@ public class UserSteps extends BaseStep {
     }
 
     public void login(ProjectForLogin project) {
-        loginPage.usernameInput.sendKeys(project.getUsername());
-        loginPage.passwordInput.sendKeys(project.getPassword());
-        loginPage.logInButton.click();
+        try {
+            loginPage.usernameInput.sendKeys(project.getUsername());
+            loginPage.passwordInput.sendKeys(project.getPassword());
+            loginPage.logInButton.click();
+        } catch (Exception e) {
+            userLogger.error("Error with authorization");
+            userLogger.fatal("Fatal error with authorization");
+        }
+
+        userLogger.info(loginPage.showLoginMessage());
     }
 
     public void addProductAndGoToCart() {
-        productsPage.addToCartTShirt.click();
-        productsPage.goToCart.click();
+        try {
+            productsPage.addToCartTShirt.click();
+            productsPage.goToCart.click();
+        } catch (Exception e) {
+            userLogger.error("Error with add product and go to cart");
+            userLogger.fatal("Fatal error with add product and go to cart");
+        }
     }
 
     public void putCheckoutButton() {
-        cartPage.checkoutButton.click();
+        try {
+            cartPage.checkoutButton.click();
+        } catch (Exception e) {
+            userLogger.error("Error with cart");;
+            userLogger.fatal("Fatal error with cart");;
+        }
+
+        userLogger.info(cartPage.showCartMessage());
     }
 
     public void putYourPayInfo(User user) {
-        checkoutPage.firstName.sendKeys(user.getFirstname());
-        checkoutPage.lastName.sendKeys(user.getLastname());
-        checkoutPage.zipCode.sendKeys(user.getZipcode());
-        checkoutPage.continueButton.click();
-    }
-    public ProductsPage finishPayment() {
-        checkoutPage.finishButton.click();
-        checkoutPage.backToProducts.click();
-        return new ProductsPage(driver);
+        try {
+            checkoutPage.firstName.sendKeys(user.getFirstname());
+            checkoutPage.lastName.sendKeys(user.getLastname());
+            checkoutPage.zipCode.sendKeys(user.getZipcode());
+            checkoutPage.continueButton.click();
+        } catch (Exception e) {
+            userLogger.error("Error with pay");
+            userLogger.fatal("Fatal error with pay");
+        }
+
+        userLogger.info(checkoutPage.showCheckoutMessage());
     }
 
+    public ProductsPage finishPayment() {
+        try {
+            checkoutPage.finishButton.click();
+            checkoutPage.backToProducts.click();
+        } catch (Exception e) {
+            userLogger.error("Error with finish operation");
+            userLogger.fatal("Fatal error with finish operation");
+        }
+        return new ProductsPage(driver);
+    }
 }

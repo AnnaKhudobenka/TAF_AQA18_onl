@@ -16,6 +16,10 @@ public class CartPage extends BasePage {
         super(driver);
     }
 
+    public String showCartMessage() {
+        return "Massage about cart";
+    }
+
 //    @Override
 //    protected By getPageIdentifier() {
 //        return nameProducts;
