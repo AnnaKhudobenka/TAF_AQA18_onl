@@ -30,8 +30,8 @@ public class UserSteps extends BaseStep {
             loginPage.passwordInput.sendKeys(project.getPassword());
             loginPage.logInButton.click();
         } catch (Exception e) {
-            userLogger.error("Error with authorization");
-            userLogger.fatal("Fatal error with authorization");
+            userLogger.error("Error with authorization", e);
+            userLogger.fatal("Fatal error with authorization", e);
         }
 
         userLogger.info(loginPage.showLoginMessage());
@@ -42,8 +42,8 @@ public class UserSteps extends BaseStep {
             productsPage.addToCartTShirt.click();
             productsPage.goToCart.click();
         } catch (Exception e) {
-            userLogger.error("Error with add product and go to cart");
-            userLogger.fatal("Fatal error with add product and go to cart");
+            userLogger.error("Error with add product and go to cart", e);
+            userLogger.fatal("Fatal error with add product and go to cart", e);
         }
     }
 
@@ -51,8 +51,8 @@ public class UserSteps extends BaseStep {
         try {
             cartPage.checkoutButton.click();
         } catch (Exception e) {
-            userLogger.error("Error with cart");;
-            userLogger.fatal("Fatal error with cart");;
+            userLogger.error("Error with cart", e);
+            userLogger.fatal("Fatal error with cart", e);
         }
 
         userLogger.info(cartPage.showCartMessage());
@@ -65,8 +65,8 @@ public class UserSteps extends BaseStep {
             checkoutPage.zipCode.sendKeys(user.getZipcode());
             checkoutPage.continueButton.click();
         } catch (Exception e) {
-            userLogger.error("Error with pay");
-            userLogger.fatal("Fatal error with pay");
+            userLogger.error("Error with pay", e);
+            userLogger.fatal("Fatal error with pay", e);
         }
 
         userLogger.info(checkoutPage.showCheckoutMessage());
@@ -77,8 +77,8 @@ public class UserSteps extends BaseStep {
             checkoutPage.finishButton.click();
             checkoutPage.backToProducts.click();
         } catch (Exception e) {
-            userLogger.error("Error with finish operation");
-            userLogger.fatal("Fatal error with finish operation");
+            userLogger.error("Error with finish operation", e);
+            userLogger.fatal("Fatal error with finish operation", e);
         }
         return new ProductsPage(driver);
     }
