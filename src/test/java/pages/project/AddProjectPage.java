@@ -1,6 +1,7 @@
 package pages.project;
 
 import baseEntities.BasePage;
+import elements.CheckBox;
 import elements.RadioButton;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -35,5 +36,9 @@ public class AddProjectPage extends BasePage {
 
     public RadioButton getType() {
         return new RadioButton(driver, "suite_mode");
+    }
+
+    public CheckBox getCheckBox() {
+        return new CheckBox(driver, By.id("show_announcement"));
     }
  }

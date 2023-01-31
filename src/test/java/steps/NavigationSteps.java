@@ -3,6 +3,7 @@ package steps;
 import baseEntities.BaseStep;
 import org.openqa.selenium.WebDriver;
 import pages.project.AddProjectPage;
+import pages.project.AddTestCasePage;
 
 public class NavigationSteps extends BaseStep {
     public NavigationSteps(WebDriver driver) {
@@ -16,4 +17,12 @@ public class NavigationSteps extends BaseStep {
 
         return page;
     }
+    public AddTestCasePage navigateToAddTestCasePage() {
+
+        AddTestCasePage page = new AddTestCasePage(driver);
+        page.openPageByUrl();
+
+        return page;
+    }
+
 }
