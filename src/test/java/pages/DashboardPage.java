@@ -3,6 +3,7 @@ package pages;
 import baseEntities.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class DashboardPage extends BasePage {
     private final static String pagePath = "index.php?/dashboard";
@@ -29,4 +30,7 @@ public class DashboardPage extends BasePage {
         super.openPageByUrl(pagePath);
     }
 
+    public String getTitle () {
+        return waitsService.waitForVisibilityBy(headerTitleLabelLocator).getText();
+    }
 }
