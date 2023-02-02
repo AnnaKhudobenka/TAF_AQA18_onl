@@ -7,10 +7,10 @@ import org.openqa.selenium.WebDriver;
 import pages.DashboardPage;
 import pages.LoginPage;
 
-public class UserSteps extends BaseStep {
+public class UserStep extends BaseStep {
     private LoginPage loginPage;
 
-    public UserSteps(WebDriver driver) {
+    public UserStep(WebDriver driver) {
         super(driver);
 
         loginPage = new LoginPage(driver);
