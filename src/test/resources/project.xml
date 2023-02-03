@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<projectsList>
+    <project>
+        <name>AQA_01 Project</name>
+        <announcement>
+            This is description!!
+        </announcement>
+        <isShowAnnouncement>
+            true
+        </isShowAnnouncement>
+        <testcases>
+            <testcasesID>1</testcasesID>
+            <testcasesID>3</testcasesID>
+            <testcasesID>5</testcasesID>
+        </testcases>
+        <empty>null</empty>
+    </project>
+    <project>
+        <name>AQA_01 Project</name>
+        <announcement>
+            This is description!!
+        </announcement>
+        <isShowAnnouncement>
+            true
+        </isShowAnnouncement>
+        <testcases>
+            <testcasesID>1</testcasesID>
+            <testcasesID>3</testcasesID>
+            <testcasesID>5</testcasesID>
+        </testcases>
+        <empty>null</empty>
+    </project>
+</projectsList>
