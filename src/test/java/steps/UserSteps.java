@@ -1,19 +1,41 @@
 package steps;
 
-import pages.LoginPage;
+import baseEntities.BaseStep;
+import models.UserForLogin;
+import models.UserForPay;
 
-public class UserSteps {
-    private LoginPage loginPage;
+import static com.codeborne.selenide.Condition.visible;
 
-    public void login(String email, String psw) {
-        loginPage.getEmailInput().sendKeys(email);
-        loginPage.getPassword().sendKeys(psw);
+public class UserSteps extends BaseStep {
+
+    public void login(UserForLogin userForLogin) {
+        loginPage.getUsernameInput().setValue(userForLogin.getUsername());
+        loginPage.getPasswordInput().setValue(userForLogin.getPassword());
         loginPage.getLogInButton().click();
     }
 
-    public LoginPage loginIncorrect(String email, String psw) {
-        login(email, psw);
+    public void addProductAndGoToCart() {
+        productsPage.getAddToCartTShirt().click();
+        productsPage.getGoToCart().click();
+    }
 
-        return loginPage;
+    public void putCheckoutButton() {
+        cartPage.getCheckoutButton().click();
+    }
+
+    public void putYourPayInfo(UserForPay userForPay) {
+        checkoutPage.getFirstName().sendKeys(userForPay.getFirstname());
+        checkoutPage.getLastName().sendKeys(userForPay.getLastname());
+        checkoutPage.getZipCode().sendKeys(userForPay.getZipcode());
+        checkoutPage.getContinueButton().click();
+    }
+
+    public void finishPayment() {
+        checkoutPage.getFinishButton().click();
+        checkoutPage.getBackToProducts().click();
+    }
+
+    public void check() {
+        productsPage.getHeaderTitleLabel().shouldBe(visible);
     }
 }
