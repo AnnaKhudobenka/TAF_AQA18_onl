@@ -7,7 +7,7 @@ import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 
 public class Hook extends BaseCucumberTest {
-    private BaseCucumberTest baseCucumberTest;
+    protected BaseCucumberTest baseCucumberTest;
 
     public Hook(BaseCucumberTest baseCucumberTest) {
         this.baseCucumberTest = baseCucumberTest;
@@ -17,7 +17,7 @@ public class Hook extends BaseCucumberTest {
     public void initScenario(Scenario scenario) {
         System.out.println("HOOK: Started browser");
 
-//        baseCucumberTest.driver = new BrowserFactory().getDriver();
+        baseCucumberTest.driver = new BrowserFactory().getDriver();
     }
 
     @After
