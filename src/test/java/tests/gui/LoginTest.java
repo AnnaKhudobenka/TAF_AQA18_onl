@@ -1,10 +1,9 @@
-package tests;
+package tests.gui;
 
 import baseEntities.BaseTest;
 import configuration.ReadProperties;
 import io.qameta.allure.*;
-import models.User;
-import org.openqa.selenium.By;
+import models.UserGui;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.DashboardPage;
@@ -32,7 +31,7 @@ public class LoginTest extends BaseTest {
     @Link(name = "catalog", type = "mylink", url = "https://onliner.by")
     @Severity(SeverityLevel.BLOCKER)
     public void loginSuccessfulTest() {
-        User user = new User.Builder()
+        UserGui user = new UserGui.Builder()
                 .withEmail(ReadProperties.username())
                         .withPassword(ReadProperties.password())
                                 .build();
