@@ -13,16 +13,15 @@ public class WrappersTest extends BaseTest {
     public void checkBoxTest() {
         userStep.loginSuccessful(ReadProperties.username(), ReadProperties.password());
         AddProjectPage page = new NavigationSteps(driver).navigateToAddProjectPage();
-        page.getCheckBox().select();
+        page.getCheckBox().putUpFlag();
     }
 
     @Test
-    public void dropDownMenuTest() throws InterruptedException {
+    public void dropDownMenuTest() {
         userStep.loginSuccessful(ReadProperties.username(), ReadProperties.password());
         AddTestCasePage page = new NavigationSteps(driver).navigateToAddTestCasePage();
 
-        page.getDropDown();
-//                .select(By.id("template_id_chzn_o_1"));
-        Thread.sleep(5000);
+        page.getDropDown().selectByValue(1);
+//        page.getDropDown().selectBySearch("High");
     }
 }

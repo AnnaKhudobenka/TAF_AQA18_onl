@@ -10,7 +10,15 @@ public class CheckBox {
         uiElement = new UIElement(driver, by);
     }
 
-    public void select() {
-        uiElement.click();
+    public void removeFlag() {
+        if (uiElement.isSelected()) {
+            uiElement.click();
+        }
     }
+    public void putUpFlag() {
+        if (!uiElement.isSelected()) {
+            uiElement.click();
+        }
+    }
+
 }

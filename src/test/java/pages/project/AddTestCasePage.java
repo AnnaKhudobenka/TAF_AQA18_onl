@@ -23,6 +23,6 @@ public class AddTestCasePage extends BasePage {
     }
 
     public DropDownMenu getDropDown() {
-        return new DropDownMenu(driver, By.id("template_id_chzn"));
+        return new DropDownMenu(driver, "priority_id_chzn");
     }
 }
