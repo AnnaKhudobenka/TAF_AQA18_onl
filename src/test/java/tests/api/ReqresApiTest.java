@@ -15,19 +15,24 @@ public class ReqresApiTest {
 
     @Test
     public void simpleStepByStepApiTest(){
+        // Setup RestAssured
         RestAssured.baseURI = "https://reqres.in/";
 
+        // Setup endpoint
         int userID = 2;
-        String endpoint = "/api/users/" +userID;
+        String endpoint = "/api/users/" + userID;
 
+        // Setup Request Object
         RequestSpecification httpRequest = given();
 
+        // Setup Response Object
         Response response = httpRequest.request(Method.GET, endpoint);
 
         int statusCode = response.getStatusCode();
         Assert.assertEquals(statusCode, 200);
         Assert.assertEquals(statusCode, HttpStatus.SC_OK);
 
+        // Get Response Body
         System.out.println(response.getBody().asPrettyString());
 
     }
@@ -37,7 +42,7 @@ public class ReqresApiTest {
         RestAssured.baseURI = "https://reqres.in/";
 
         int userID = 2;
-        String endpoint = "/api/users/" +userID;
+        String endpoint = "/api/users/" + userID;
 
         given()
                 .when()

@@ -23,7 +23,7 @@ public class TestRailApiTest1 extends BaseApiTest {
     public void addProject1() {
         String endpoint = "index.php?/api/v2/add_project";
 
-        expectedProject = new Project();
+        Project expectedProject = new Project();
         expectedProject.setName("WP_Project_01");
         expectedProject.setAnnouncement("This is Announcement");
         expectedProject.setType(1);
@@ -51,7 +51,7 @@ public class TestRailApiTest1 extends BaseApiTest {
     public void addProject2() {
         String endpoint = "index.php?/api/v2/add_project";
 
-        expectedProject = new Project();
+        Project expectedProject = new Project();
         expectedProject.setName("WP_Project_01");
         expectedProject.setAnnouncement("This is Announcement");
         expectedProject.setType(1);
@@ -74,7 +74,7 @@ public class TestRailApiTest1 extends BaseApiTest {
     public void addProject3() {
         String endpoint = "index.php?/api/v2/add_project";
 
-        expectedProject = new Project();
+        Project expectedProject = new Project();
         expectedProject.setName("WP_Project_03");
         expectedProject.setAnnouncement("This is Announcement");
         expectedProject.setType(1);
@@ -94,7 +94,7 @@ public class TestRailApiTest1 extends BaseApiTest {
     public void addProject3_1() {
         ProjectAdapter projectAdapter = new ProjectAdapter();
 
-        expectedProject = new Project();
+        Project expectedProject = new Project();
         expectedProject.setName("WP_Project_03");
         expectedProject.setAnnouncement("This is Announcement");
         expectedProject.setType(1);
@@ -108,7 +108,7 @@ public class TestRailApiTest1 extends BaseApiTest {
     public void addProject4() {
         String endpoint = "index.php?/api/v2/add_project";
 
-        expectedProject = new Project();
+        Project expectedProject = new Project();
         expectedProject.setName("WP_Project_04");
         expectedProject.setAnnouncement("This is Announcement");
         expectedProject.setType(1);
@@ -116,7 +116,6 @@ public class TestRailApiTest1 extends BaseApiTest {
 
         projectID = given()
                 .body(expectedProject, ObjectMapperType.GSON)
-                .log().body()
                 .when()
                 .post(endpoint)
                 .then()
@@ -141,7 +140,6 @@ public class TestRailApiTest1 extends BaseApiTest {
 
         Response response = given()
                 .body(expectedProject, ObjectMapperType.GSON)
-                .log().body()
                 .when()
                 .post(endpoint)
                 .then()
