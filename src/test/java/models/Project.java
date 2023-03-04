@@ -1,10 +1,13 @@
 package models;
 
 import com.google.gson.annotations.SerializedName;
+import lombok.Builder;
 
 import java.util.Objects;
 
+@Builder
 public class Project {
+    private int id;
     @SerializedName(value = "name")
     private String nameA;
 
@@ -20,6 +23,9 @@ public class Project {
 
     public String getName() {
         return nameA;
+    }
+    public int getID() {
+        return id;
     }
 
     public void setName(String name) {

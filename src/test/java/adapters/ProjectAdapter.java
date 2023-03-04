@@ -7,18 +7,11 @@ import utils.Endpoints;
 
 import static io.restassured.RestAssured.given;
 
-public class ProjectAdapter extends BaseAdapter{
+public class ProjectAdapter {
 
     public Project add(Project project) {
-
-        String jsonBody = gson.toJson(project);
-        return add(jsonBody);
-    }
-    public Project add(String jsonBody) {
-
         return given()
-                .body(jsonBody)
-                .log().all()
+                .body(project, ObjectMapperType.GSON)
                 .when()
                 .post(Endpoints.ADD_PROJECT)
                 .then()
@@ -26,5 +19,15 @@ public class ProjectAdapter extends BaseAdapter{
                 .statusCode(HttpStatus.SC_OK)
                 .extract()
                 .as(Project.class, ObjectMapperType.GSON);
+    }
+
+    public void delete(int projectID) {
+        given()
+                .pathParam("project_id", projectID)
+                .when()
+                .post(Endpoints.DELETE_PROJECT)
+                .then()
+                .statusCode(HttpStatus.SC_OK);
+
     }
 }
