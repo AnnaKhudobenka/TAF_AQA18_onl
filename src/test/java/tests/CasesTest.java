@@ -20,7 +20,14 @@ public class CasesTest extends BaseApiTest {
                 .estimate(null)
                 .build();
 
-        Case expectedCase = caseAdapter.add(addCase, 1);
+        Section addSection = Section.builder()
+                .name("newSection")
+                .build();
+
+        Section newSection = sectionAdapter.add(addSection, projectID);
+        int sectionID = newSection.getId();
+
+        Case expectedCase = caseAdapter.add(addCase, sectionID);
         caseID = expectedCase.getId();
 
         Case actualCase = caseAdapter.get(caseID);
